@@ -1,0 +1,26 @@
+/**index.wxss**/
+page {
+  background-color: #eee;
+}
+
+.case-page {
+  padding: 20rpx;
+}
+
+.list-masonry {
+  column-count: 2;
+  column-gap: 20rpx;
+}
+
+.item-masonry {
+  background-color: #fff;
+  break-inside: avoid; /*避免在元素内部插入分页符*/
+  box-sizing: border-box;
+  padding: 20rpx;
+  margin-bottom: 20rpx;
+}
+
+.item-masonry image {
+  width: 100%;
+}
+

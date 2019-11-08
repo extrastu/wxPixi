@@ -1,0 +1,56 @@
+<!--index.wxml-->
+<wxs src="../../utils/formatTime.wxs" module="filter" />
+<view class="cu-bar search bg-white">
+  <view class="search-form round">
+    <text class="cuIcon-search"></text>
+    <input type="text" value='{{searchText}}' placeholder="搜索图片" bindinput="textInput" confirm-type="search" bindconfirm='searchByClick'></input>
+  </view>
+</view>
+<view class="cu-bar bg-white" wx:if='{{suggests.length>0}}'>
+  <view class="action">
+    <text class="cuIcon-title text-blue"></text>搜索建议
+  </view>
+</view>
+<view class="padding-sm flex flex-wrap bg-white" wx:if='{{suggests.length>0}}'>
+  <view class="padding-xs" wx:for="{{suggests}}" wx:key>
+    <view class="cu-tag bg-grey" data-text='{{item.keywordTranslated}}' bindtap="setKeyword">{{item.keywordTranslated}}</view>
+  </view>
+</view>
+<view class="cu-form-group">
+  <view class="title">日期选择</view>
+  <picker mode="date" value="{{date}}" start="2015-09-01" end="2030-09-01" bindchange="DateChange">
+    <view class="picker">
+      {{date}}
+    </view>
+  </picker>
+</view>
+<view class="cu-form-group">
+  <view class="title">选择日/周/月排行</view>
+  <picker bindchange="PickerChange" value="{{index}}" range="{{picker}}">
+    <view class="picker">
+      {{index?picker[index]:'默认按日排行'}}
+    </view>
+  </picker>
+</view>
+<view class='case-page'>
+  <view class='list-masonry'>
+    <view class='item-masonry' wx:for="{{images}}" wx:for-index='idx'>
+      <image src='{{filter.urlReplace(item.imageUrls[0].medium)}}' data-index="{{idx}}" data-src='{{filter.urlReplace(item.imageUrls[0].large)}}' mode='widthFix' bindtap="preview"></image>
+      <text>{{item.title}}</text>
+    </view>
+  </view>
+</view>
+<view class="padding-xs flex align-center" wx:if='{{images.length === 0}}'>
+  <view class="flex-sub text-center">
+    <view class="solid-bottom text-sm padding">
+      <text class="text-gray">{{date}}暂无数据，请重新选择日期</text>
+    </view>
+  </view>
+</view>
+<view class="padding-xs flex align-center">
+  <view class="flex-sub text-center">
+    <view class="solid-bottom text-xs padding">
+      <text class="text-gray">来自：https://pixivic.com/</text>
+    </view>
+  </view>
+</view>

@@ -1,0 +1,20 @@
+/* colorui/components/cu-custom.wxss */
+
+.back-pre {
+  width: 36rpx;
+  height: 32rpx;
+  margin-top: 4rpx;
+  padding: 5rpx;
+}
+
+.calendar {
+  background: url('https://raw.githubusercontent.com/it5200/oss/master/calendar.png');
+  width: 60rpx;
+  height: 60rpx;
+  background-size: 100%;
+}
+.day{
+  margin-top: 20rpx;
+  font-size: 30rpx;
+  margin-left: 13rpx;
+}
