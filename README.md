@@ -18,6 +18,8 @@ pixi微信小程序，基于pixivic 开放API来实现
 
 ## 最后
 
-扫码体验
+- 扫码体验
 
 ![](https://cdn.2zimu.com/mbd_file_15731830885231573183088524.png)
+
+- 如果喜欢，欢迎购买支持 https://mianbaoduo.com/o/bread/mbd-YZWXm5g=
