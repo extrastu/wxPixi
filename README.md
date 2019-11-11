@@ -8,6 +8,7 @@ pixi微信小程序，基于pixivic 开放API来实现
 ### 如果你要直接发布
 
 - 注册小程序
+- 用微信开发者工具导入，填写小程序appid
 - 在开发一栏中选择开发设置 -> 服务器域名 -> request合法域名  https://api.pixivic.com
 ### 如果你只是体验
 
