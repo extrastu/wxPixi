@@ -1,0 +1,2 @@
+<!--components/backTop/backTop.wxml-->
+<image src='{{baseUrl}}' class='goTop' hidden='{{!floorstatus}}' bindtap="goTop"></image>

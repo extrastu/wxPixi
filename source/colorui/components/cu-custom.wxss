@@ -1,8 +1,8 @@
 /* colorui/components/cu-custom.wxss */
 
 .back-pre {
-  width: 36rpx;
-  height: 32rpx;
+  width: 64rpx;
+  height: 64rpx;
   margin-top: 4rpx;
   padding: 5rpx;
 }

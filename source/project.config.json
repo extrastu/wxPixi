@@ -10,7 +10,7 @@
 		"minified": true,
 		"newFeature": true,
 		"coverView": true,
-		"autoAudits": false,
+		"autoAudits": true,
 		"showShadowRootInWxmlPanel": true,
 		"scopeDataCheck": false,
 		"checkInvalidKey": true,
@@ -20,7 +20,10 @@
 			"ignore": [],
 			"disablePlugins": [],
 			"outputPath": ""
-		}
+		},
+		"nodeModules": true,
+		"uglifyFileName": true,
+		"remoteDebugLogEnable": false
 	},
 	"compileType": "miniprogram",
 	"libVersion": "2.9.2",
@@ -32,6 +35,12 @@
 	"isGameTourist": false,
 	"simulatorType": "wechat",
 	"simulatorPluginLibVersion": {},
+	"qqappid": "1109961173",
+	"scripts": {
+		"beforeCompile": "",
+		"beforePreview": "",
+		"beforeUpload": ""
+	},
 	"condition": {
 		"search": {
 			"current": -1,

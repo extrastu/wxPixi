@@ -1,6 +1,28 @@
 <!--index.wxml-->
 <wxs src="../../utils/formatTime.wxs" module="filter" />
-<view class="cu-bar search bg-white">
+<view class='{{skinStyle}}-box box'>
+<view class="box">
+  <view class="cu-bar bg-white">
+    <view class="action border-title">
+      <text class="text-xl text-bold text-Abc">pixi</text>
+    </view>
+    <view class="action">
+      <picker bindchange="PickerChange" value="{{index}}" range="{{picker}}">
+        <view class="picker">
+          {{index?picker[index]:'日排行'}}
+        </view>
+      </picker>
+    </view>
+    <view class='action text-lg'>
+      <picker mode="date" value="{{date}}" start="2019-11-14" end="2030-09-01" bindchange="DateChange">
+        <view class="picker">
+          <text class='cuIcon-calendar '></text>
+        </view>
+      </picker>
+    </view>
+  </view>
+</view>
+<view class="cu-bar search bg-white" >
   <view class="search-form round">
     <text class="cuIcon-search"></text>
     <input type="text" value='{{searchText}}' placeholder="搜索图片" bindinput="textInput" confirm-type="search" bindconfirm='searchByClick'></input>
@@ -16,15 +38,15 @@
     <view class="cu-tag bg-grey" data-text='{{item.keywordTranslated}}' bindtap="setKeyword">{{item.keywordTranslated}}</view>
   </view>
 </view>
-<view class="cu-form-group">
+<!-- <view class="cu-form-group">
   <view class="title">日期选择</view>
   <picker mode="date" value="{{date}}" start="2015-09-01" end="2030-09-01" bindchange="DateChange">
     <view class="picker">
       {{date}}
     </view>
   </picker>
-</view>
-<view class="cu-form-group">
+</view> -->
+<!-- <view class="cu-form-group">
   <view class="title">选择日/周/月排行</view>
   <picker bindchange="PickerChange" value="{{index}}" range="{{picker}}">
     <view class="picker">
@@ -32,10 +54,18 @@
     </view>
   </picker>
 </view>
-<view class='case-page'>
+<view class="cu-form-group">
+  <view class="title">画质选择</view>
+  <picker bindchange="PickerPhotoChange" value="{{photoIndex}}" range="{{PhotoPicker}}">
+    <view class="picker">
+      {{photoIndex?PhotoPicker[photoIndex]:'默认Medium'}}
+    </view>
+  </picker>
+</view> -->
+<view class='case-page' >
   <view class='list-masonry'>
-    <view class='item-masonry' wx:for="{{images}}" wx:for-index='idx'>
-      <image src='{{filter.urlReplace(item.imageUrls[0].medium)}}' data-index="{{idx}}" data-src='{{filter.urlReplace(item.imageUrls[0].large)}}' mode='widthFix' bindtap="preview"></image>
+    <view class='item-masonry' wx:for="{{images}}" wx:for-index='idx' wx:key='idx'>
+      <image src='{{filter.urlReplace(item.imageUrls[0][photoQuality])}}' data-index="{{idx}}" data-src='{{filter.urlReplace(item.imageUrls[0][photoQuality])}}' mode='widthFix' bindtap="preview"></image>
       <text>{{item.title}}</text>
     </view>
   </view>
@@ -54,3 +84,6 @@
     </view>
   </view>
 </view>
+</view>
+
+<image src='../../public/images/top.png' class='goTop' hidden='{{!floorstatus}}' bindtap="goTop"></image>

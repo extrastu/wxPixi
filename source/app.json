@@ -6,14 +6,37 @@
   "window": {
     "backgroundTextStyle": "light",
     "navigationBarBackgroundColor": "#fff",
-    "navigationBarTitleText": "wxPixi",
+    "navigationBarTitleText": "",
     "navigationBarTextStyle": "black"
+  },
+  "tabBar": {
+    "selectedColor": "#000000",
+    "color": "#8c7d51",
+    "backgroundColor":"#eeeeee",
+    "list": [
+      {
+        "pagePath": "pages/index/index",
+        "text": "首页",
+        "iconPath": "public/images/home1.png",
+        "selectedIconPath": "public/images/home.png"
+      },
+      {
+        "pagePath": "pages/logs/logs",
+        "text": "设置",
+        "iconPath": "public/images/setting1.png",
+        "selectedIconPath": "public/images/setting.png"
+      }
+    ]
   },
   "style": "v2",
   "sitemapLocation": "sitemap.json",
   "networkTimeout": {
     "request": 10000,
     "downloadFile": 10000
+  },
+  "usingComponents": {
+    "cu-custom": "/colorui/components/cu-custom",
+    "backTop": "/components/backTop/backTop"
   },
   "debug": false
 }

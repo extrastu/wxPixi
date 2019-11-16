@@ -24,3 +24,10 @@ page {
   width: 100%;
 }
 
+.goTop{
+  height: 100rpx;
+  width: 100rpx;
+  position: fixed;
+  bottom: 50rpx;
+  right: 30rpx;
+}

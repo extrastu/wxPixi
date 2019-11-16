@@ -1,6 +1,57 @@
 <!--logs.wxml-->
-<view class="container log-list">
-  <block wx:for="{{logs}}" wx:for-item="log">
-    <text class="log-item">{{index + 1}}. {{log}}</text>
-  </block>
+<view class="{{skinStyle}}-box box page" style="height:{{height}}px">
+  <view class="box">
+    <view class="cu-bar bg-white">
+      <view class="action border-title">
+        <text class="text-xl text-bold">设置</text>
+        <text class="bg-grey" style="width:2rem"></text>
+        <!-- 底部样式 last-child选择器-->
+      </view>
+    </view>
+  </view>
+  <view class="cu-list menu sm-border card-menu margin-top margin-bottom">
+    <view class="cu-form-group">
+      <view class="title">画质选择</view>
+      <picker bindchange="PickerPhotoChange" value="{{photoIndex}}" range="{{PhotoPicker}}">
+        <view class="picker">
+          {{photoIndex?PhotoPicker[photoIndex]:'默认Medium'}}
+        </view>
+      </picker>
+    </view>
+    <view class="cu-form-group">
+      <view class="title">夜间模式</view>
+      <switch bindchange="switchChange" color="#F39C89" class="switch"></switch>
+    </view>
+    <view class="cu-form-group">
+      <view class="title">开发者</view>
+      <text>extrastu</text>
+    </view>
+    <view class="cu-form-group">
+      <view class="title text-Abc">api</view>
+      <text>www.pixivic.com</text>
+    </view>
+    <view class="cu-form-group">
+      <view class="title text-Abc">github</view>
+      <text>https://github.com/it5200/wxPixi.git</text>
+    </view>
+    <view class="cu-form-group">
+      <view class="title"><button class="cu-btn sm" open-type="feedback">意见反馈</button></view>
+    </view>
+    <view class="cu-form-group">
+      <view class="title"><button class="cu-btn sm" open-type="share" share-type="{{3}}">分享给朋友</button></view>
+    </view>
+  </view>
+  <view class="padding-lg flex align-center copyRight">
+    <view class="flex-sub text-center">
+      <view class="solid-bottom text-xs padding-sm">
+        <text class="text-gray">Made by <text class="text-gray text-Abc">extrastu</text></text>
+      </view>
+      <view class="padding-sm">
+        <text class="text-gray text-xs text-Abc">pixi</text>
+      </view>
+      <view class="padding-sm">
+        <text class="text-gray text-xs text-Abc">version <text class="text-gray text-Abc">1.0.1</text></text>
+      </view>
+    </view>
+  </view>
 </view>
